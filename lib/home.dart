@@ -97,85 +97,20 @@ class home extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding:  EdgeInsets.all(8.0),
+                padding:  const EdgeInsets.all(8.0),
                 child: Container(
                   width: 800,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        Container(
-                          height: 40,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: grey, width: 0.5),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(40),
-                            ),
-                          ),
-                          child: Center(
-                            child: Text(text3,
-                              style: TextStyle(
-                                color: black,
-                              ),
-                            ),
-                          ),
-                        ),
+                        menu(name:text3),
                         const SizedBox(width: 8),
-                        Container(
-                          height: 40,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.grey, width: 0.5),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(40),
-                            ),
-                          ),
-                          child:  Center(
-                            child: Text(text4,
-                              style: const TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                          ),
-                        ),
+                        menu(name: text4),
                         const SizedBox(width: 8),
-                        Container(
-                          height: 40,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: grey, width: 0.5),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(40),
-                            ),
-                          ),
-                          child:  Center(
-                            child: Text(text5,
-                              style:  TextStyle(
-                                color: black,
-                              ),
-                            ),
-                          ),
-                        ),
+                        menu(name: text5),
                         const SizedBox(width: 8),
-                        Container(
-                          height: 40,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: grey, width: 0.5),
-                            borderRadius: const BorderRadius.all(
-                              Radius.circular(40),
-                            ),
-                          ),
-                          child:  Center(
-                            child: Text(
-                              text6,
-                              style: TextStyle(
-                                color: black,
-                              ),
-                            ),
-                          ),
-                        ),
+                        menu(name: text6),
                       ],
                     ),
                   ),
@@ -195,12 +130,13 @@ class home extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(left: 8.0),
                 child: Row(
                   children: [
                     Container(
                       height: 200,
                       width: 150,
+                      // child:Icon(Icons.favorite_border_outlined,color: Colors.black26,),
                       decoration: BoxDecoration(
                         border: Border.all(color: black),
                       ),
@@ -216,18 +152,23 @@ class home extends StatelessWidget {
     );
   }
 }
-// Widget menu({String! name})
-// {
-//     height: 40,
-//     width: 100,
-//     decoration: BoxDecoration(
-//     border: Border.all(color: Colors.grey,width: 0.5),
-//     borderRadius: BorderRadius.all(Radius.circular(40),),
-//     ),
-//     child: Center(
-//       child: Text($name,style: TextStyle(
-//     color: Colors.black,
-//     ),
-//     ),
-//     ),
-// }
+Widget menu({String? name})
+{
+    return Container(
+      height: 40,
+      width: 100,
+      decoration: BoxDecoration(
+        border: Border.all(color: grey, width: 0.5),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(40),
+        ),
+      ),
+      child: Center(
+        child: Text(name!,
+          style: TextStyle(
+            color: black,
+          ),
+        ),
+      ),
+    );
+}
