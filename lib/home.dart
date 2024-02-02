@@ -1,5 +1,6 @@
 import 'package:app/utils/Color.dart';
 import 'package:app/utils/Text.dart';
+import 'package:app/utils/salemenu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -91,7 +92,7 @@ class home extends StatelessWidget {
                   child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        'assect/img/img.png',
+                        'asset/img/img.png',
                         fit: BoxFit.cover,
                       )),
                 ),
@@ -120,7 +121,7 @@ class home extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   margin: EdgeInsets.only(right: 190),
-                  height: 50,
+                  height: 35,
                   width: 150,
                   child: Text(text7,style: TextStyle(
                     color: black,
@@ -129,28 +130,107 @@ class home extends StatelessWidget {
                   ),),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 200,
-                      width: 150,
-                      // child:Icon(Icons.favorite_border_outlined,color: Colors.black26,),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: black),
-                      ),
-                      child: Image.asset('assect/img/sale image/img1.png',),
-                    )
-                  ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Row(
+                    children: List.generate(sale.length, (index) => saleprodect(name:sale[index]['name'],img: sale[index]['Image'],prize: sale[index]['prize']))
+                  ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 15.0,top: 8.0),
+                child: Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Text('Most Popular',style: TextStyle(
+                          color: black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 12.0),
+                        child: Container(
+                          height: 28,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: grey,width: 0.2),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Center(
+                            child: Text('See All',style: TextStyle(
+                              color: black,
+                              fontSize: 15,
+                            ),),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
             ],
           ),
         ),
       ),
     );
   }
+}
+Widget saleprodect({String? img,String? name,double? prize})
+{
+  return Column(
+    children: [
+      Container(
+        margin: EdgeInsets.only(top: 1),
+          height: 140,
+          width: 140,
+          decoration: BoxDecoration(
+            color: Colors.grey.shade200,
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+              boxShadow: [
+                BoxShadow(
+                  color: grey,
+                  blurRadius: 1,
+                  spreadRadius: 0.5,
+                ),
+              ]
+          ),
+        child: Image.asset('$img',fit: BoxFit.cover,),
+        ),
+      Padding(
+        padding: const EdgeInsets.only(top: 10),
+          child: Container(
+          height: 70,
+          width: 150,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text.rich(
+                TextSpan(
+                  children: [
+                  TextSpan(text: '$name\n',style: TextStyle(
+                  color: grey,
+                  )
+                  ),
+                  TextSpan(text: '\$ $prize',style: TextStyle(
+                  color: black,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  )
+                  ),
+                ],
+              ),
+                        ),
+            ),
+        ),
+      )
+
+    ],
+  );
 }
 Widget menu({String? name})
 {
