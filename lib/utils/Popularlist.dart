@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+
+List prodect = [
+  {
+    'Image':'asset/img/product image/img1.png',
+    'name':'Men Casual shirt',
+    'prize1':500.0,
+    'prize2':300.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':4.0,
+  },
+  {
+    'Image':'asset/img/product image/img2.png',
+    'name':'Galaxy Watch6 Cla..',
+    'prize1':300.0,
+    'prize2':140.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star_half_outlined,
+    'rating':3.6,
+  },{
+    'Image':'asset/img/product image/img3.png',
+    'name':'Clinique for men',
+    'prize1':225.0,
+    'prize2':70.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':3.8,
+  },
+  {
+    'Image':'asset/img/product image/img4.png',
+    'name':'UNDER ARMOUR ..',
+    'prize1':1200.0,
+    'prize2':980.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':4.0,
+  },
+];
+List prodect2 = [
+  {
+    'Image':'asset/img/product image/img6.png',
+    'name':'Villain perfume',
+    'prize1':900.0,
+    'prize2':700.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':4.3,
+  },
+  {
+    'Image':'asset/img/product image/img5.png',
+    'name':'     Nike shoes',
+    'prize1':600.0,
+    'prize2':480.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':4.2,
+  },{
+    'Image':'asset/img/product image/img7.png',
+    'name':'  Yazole watch ..',
+    'prize1':340.0,
+    'prize2':200.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':3.9,
+  },
+  {
+    'Image':'asset/img/product image/img8.png',
+    'name':'Polo Ralph Lauren',
+    'prize1':1500.0,
+    'prize2':1200.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star,
+    'rating':4.3,
+  },
+];
