@@ -1,8 +1,9 @@
+import 'package:app/utils/salemenu.dart';
 import 'package:flutter/material.dart';
-
+import 'package:app/utils/cart.dart';
 import '../../utils/Color.dart';
-import '../../utils/salemenu.dart';
 import '../../utils/size.dart';
+import 'cardScreen.dart';
 
 
 class product extends StatefulWidget {
@@ -13,12 +14,10 @@ class product extends StatefulWidget {
 }
 
 int saleindex=0;
-
-
 class _appState extends State<product> {
   @override
   Widget build(BuildContext context) {
-
+    var list = ModalRoute.of(context)!.settings.arguments as Map;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SafeArea(
@@ -35,9 +34,15 @@ class _appState extends State<product> {
               ),
             ),
             actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 15.0),
-                child: Icon(Icons.shopping_bag_outlined),
+              InkWell(
+                // overlayColor: MaterialStateProperty.all(Colors.tr),
+                onTap: () {
+                  Navigator.of(context).pushNamed('/last');
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 15.0),
+                  child: Icon(Icons.shopping_bag_outlined,size: 30,),
+                ),
               ),
             ],
             backgroundColor: Colors.grey.shade200,
@@ -48,7 +53,7 @@ class _appState extends State<product> {
                 Container(
                   height: 310,
                   width: double.infinity,
-                  child: Image.asset(sale[saleindex]['Image'],
+                  child: Image.asset(list['Image'],
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -105,7 +110,7 @@ class _appState extends State<product> {
                         ),
                         Center(
                             child: Text(
-                              sale[saleindex]['name'],
+                              list['name'],overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                               fontSize: 18,
                               wordSpacing: 2,
@@ -128,7 +133,7 @@ class _appState extends State<product> {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 1.0),
                                   child: Text(
-                                    '${sale[saleindex]['star']}',
+                                    '${list['rating']}',
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w400),
@@ -138,13 +143,13 @@ class _appState extends State<product> {
                                 Padding(
                                   padding: const EdgeInsets.only(top: 2.0),
                                   child: Text(
-                                    '(${sale[saleindex]['public']})',
+                                    '(${list['public']})',
                                     style: TextStyle(
                                         fontSize: 13, color: Colors.grey),
                                   ),
                                 ),
                                 SizedBox(width: 146),
-                                Text('\$ ${sale[saleindex]['prize']}',
+                                Text('\$ ${list['prize']}',
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.w600)),
@@ -201,21 +206,27 @@ class _appState extends State<product> {
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 22.0),
-                        child: Container(
-                          height: 50,
-                          width: 250,
-                          decoration: BoxDecoration(
-                            color: Color(0xff2F3336),
-                            borderRadius: const BorderRadius.all(Radius.circular(10)),
-                            border: Border.all(color: grey, width: 0.5),
+                      InkWell(
+                        overlayColor: MaterialStateProperty.all(Colors.grey),
+                        onTap: () {
+                          cardlist.add(list);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 22.0),
+                          child: Container(
+                            height: 50,
+                            width: 250,
+                            decoration: BoxDecoration(
+                              color: Color(0xff2F3336),
+                              borderRadius: const BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(color: grey, width: 0.5),
+                            ),
+                            child: Center(child: Text('Add to cart',style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),)),
                           ),
-                          child: Center(child: Text('Add to cart',style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                          ),)),
                         ),
                       ),
                      Padding(

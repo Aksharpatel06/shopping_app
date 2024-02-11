@@ -1,5 +1,6 @@
-import 'package:app/view/Screens/home.dart';
-import 'package:app/view/Screens/product.dart';
+import 'package:app/view/Screens/homeScreen.dart';
+import 'package:app/view/Screens/cardScreen.dart';
+import 'package:app/view/Screens/productScreen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,9 +19,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: '/',
       routes: {
         '/':(context)=>home(),
         '/product':(context)=>product(),
+        '/last':(context)=>lastscreen(),
       },
     );
   }
