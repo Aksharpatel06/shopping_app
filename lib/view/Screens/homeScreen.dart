@@ -319,7 +319,6 @@ class home extends StatelessWidget {
                   )),
                 ],
               ),
-              SizedBox(height: 10,),
               Row(
                   children: [
                     Padding(
@@ -394,7 +393,6 @@ class home extends StatelessWidget {
                  )),
                ],
              ),
-              SizedBox(height: 10,),
               Row(
                   children: [
                     Padding(

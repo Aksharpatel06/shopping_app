@@ -1,6 +1,7 @@
 import 'package:app/view/Screens/homeScreen.dart';
 import 'package:app/view/Screens/cardScreen.dart';
 import 'package:app/view/Screens/productScreen.dart';
+import 'package:app/view/Screens/splashScreen.dart';
 import 'package:flutter/material.dart';
 
 
@@ -21,7 +22,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/':(context)=>home(),
+        '/':(context)=>splashScreen(),
+        '/home':(context)=>home(),
         '/product':(context)=>product(),
         '/last':(context)=>lastscreen(),
       },
