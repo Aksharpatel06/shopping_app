@@ -89,57 +89,20 @@ class _lastscreenState extends State<lastscreen> {
                       SizedBox(
                         height: 15,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            '  Total Amount :',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black,
-                                letterSpacing: 1.5,
-                                wordSpacing: 2),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              setState(() {
-                                count = 0;
-                                for (int i = 0; i < cardlist.length; i++) {
-                                  count += (cardlist[i]['prize'] *
-                                      cardlist[i]['qty']);
-                                }
-                                if (cardlist.length == 0) {
-                                  num = 0;
-                                } else {
-                                  num = 1;
-                                }
-                              });
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 22.0),
-                              child: Container(
-                                height: 40,
-                                width: 40,
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(10)),
-                                  border: Border.all(color: grey, width: 0.5),
-                                ),
-                                child: Center(
-                                  child: Text('\$',
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                      )),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 178.0),
+                        child: Text(
+                          '  Total Amount :',
+                          style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              letterSpacing: 1.5,
+                              wordSpacing: 2),
+                        ),
                       ),
                       SizedBox(
-                        height: 15,
+                        height: 20,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -339,6 +302,19 @@ class _lastscreenState extends State<lastscreen> {
                             onPressed: () {
                               setState(() {
                                 cardlist.removeAt(index!);
+                                count = 0;
+                                for (int i = 0; i < cardlist.length; i++) {
+                                  count += (cardlist[i]['prize'] *
+                                      cardlist[i]['qty']);
+                                }
+                                if(cardlist.length == 0)
+                                {
+                                  num=0;
+                                }
+                                else
+                                {
+                                  num=1;
+                                }
                               });
                             },
                             icon: Icon(Icons.delete_outline)),
@@ -361,6 +337,11 @@ class _lastscreenState extends State<lastscreen> {
                             child: IconButton(
                                 onPressed: () {
                                   setState(() {
+                                    count = 0;
+                                    for (int i = 0; i < cardlist.length; i++) {
+                                      count += (cardlist[i]['prize'] *
+                                          cardlist[i]['qty']);
+                                    }
                                     if (cardlist[index!]['qty'] > 0) {
                                       cardlist[index!]['qty']--;
                                     }
@@ -390,6 +371,11 @@ class _lastscreenState extends State<lastscreen> {
                             child: IconButton(
                                 onPressed: () {
                                   setState(() {
+                                    count = 0;
+                                    for (int i = 0; i < cardlist.length; i++) {
+                                      count += (cardlist[i]['prize'] *
+                                          cardlist[i]['qty']);
+                                    }
                                     cardlist[index!]['qty']++;
                                   });
                                 },

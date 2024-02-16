@@ -1,4 +1,3 @@
-import 'package:app/utils/salemenu.dart';
 import 'package:flutter/material.dart';
 import 'package:app/utils/cart.dart';
 import '../../utils/Color.dart';
@@ -35,13 +34,26 @@ class _appState extends State<product> {
             ),
             actions: [
               InkWell(
-                // overlayColor: MaterialStateProperty.all(Colors.tr),
+                overlayColor: MaterialStateProperty.all(Colors.transparent),
                 onTap: () {
+                  count = 0;
+                  for (int i = 0; i < cardlist.length; i++) {
+                    count += (cardlist[i]['prize'] *
+                        cardlist[i]['qty']);
+                  }
+                  if(cardlist.length == 0)
+                    {
+                      num=0;
+                    }
+                  else
+                    {
+                      num=1;
+                    }
                   Navigator.of(context).pushNamed('/last');
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(right: 15.0),
-                  child: Icon(Icons.shopping_bag_outlined,size: 30,),
+                  child: Icon(Icons.shopping_bag_outlined,size: 35,),
                 ),
               ),
             ],
@@ -206,27 +218,30 @@ class _appState extends State<product> {
                   ),
                   child: Row(
                     children: [
-                      InkWell(
-                        overlayColor: MaterialStateProperty.all(Colors.grey),
-                        onTap: () {
-                          cardlist.add(list);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 22.0),
-                          child: Container(
-                            height: 50,
-                            width: 250,
-                            decoration: BoxDecoration(
-                              color: Color(0xff2F3336),
-                              borderRadius: const BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(color: grey, width: 0.5),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 25.0),
+                        child: SizedBox(height: 50,
+                          width: 250,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              cardlist.add(list);
+                              num=1;
+                            },
+                              child: Center(child: Text('Add to cart',style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),)),
+                            style: ButtonStyle(
+                              shape: MaterialStatePropertyAll(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                                )
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(Color(0xff2f3336)),
+                              overlayColor: MaterialStateProperty.all(Colors.grey.shade700),
+                              ),
                             ),
-                            child: Center(child: Text('Add to cart',style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),)),
-                          ),
                         ),
                       ),
                      Padding(

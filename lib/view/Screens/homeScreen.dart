@@ -232,7 +232,7 @@ class home extends StatelessWidget {
             decoration: BoxDecoration(
                 color: Colors.grey.shade200,
                 borderRadius: BorderRadius.all(Radius.circular(20)),
-                border: Border.all(color: Colors.grey,width: 0.5),
+                // border: Border.all(color: Colors.grey,width: 0.5),
             ),
             child: Image.asset('$img',fit: BoxFit.cover,),
           ),
@@ -286,7 +286,7 @@ class home extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.grey.shade200,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: grey,width: 0.5),
+            // border: Border.all(color: grey,width: 0.5),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -360,7 +360,7 @@ class home extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.grey.shade200,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: grey,width: 0.5),
+            // border: Border.all(color: grey,width: 0.5),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
