@@ -12,7 +12,7 @@ class product extends StatefulWidget {
   State<product> createState() => _appState();
 }
 
-int saleindex=0;
+// int saleindex=0;
 class _appState extends State<product> {
   @override
   Widget build(BuildContext context) {

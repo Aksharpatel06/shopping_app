@@ -2,7 +2,6 @@ import 'package:app/utils/Color.dart';
 import 'package:app/utils/Popularlist.dart';
 import 'package:app/utils/Text.dart';
 import 'package:app/utils/salemenu.dart';
-import 'package:app/view/Screens/productScreen.dart';
 import 'package:flutter/material.dart';
 var tap=0;
 class home extends StatelessWidget {
@@ -92,7 +91,7 @@ class home extends StatelessWidget {
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
-                            'asset/img/img.png',
+                            'asset/img/img2.png',
                             fit: BoxFit.cover,
                           )),
                     ),
@@ -221,9 +220,9 @@ class home extends StatelessWidget {
         InkWell(
           overlayColor: MaterialStateProperty.all(Colors.transparent),
           onTap: () {
-              saleindex = index!;
+              // saleindex = index!;
               Navigator.of(context).pushNamed('/product',
-                  arguments: sale[saleindex]);
+                  arguments: sale[index!]);
           },
           child: Container(
             margin: EdgeInsets.only(top: 1),
@@ -274,9 +273,9 @@ class home extends StatelessWidget {
     return InkWell(
       overlayColor: MaterialStateProperty.all(Colors.transparent),
       onTap: () {
-          saleindex=index!;
+          // saleindex=index!;
           Navigator.of(context).pushNamed('/product',
-          arguments: prodect[saleindex]);
+          arguments: prodect[index!]);
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 6.0,right: 8.0,bottom: 6.0),
@@ -348,9 +347,9 @@ class home extends StatelessWidget {
     return InkWell(
       overlayColor: MaterialStateProperty.all(Colors.transparent),
       onTap: () {
-        saleindex=index1!;
+        // saleindex=index1!;
         Navigator.of(context).pushNamed('/product',
-            arguments: prodect2[index1]);
+            arguments: prodect2[index1!]);
       },
       child: Padding(
         padding: const EdgeInsets.only(top: 6.0,right: 8.0,bottom: 6.0),
