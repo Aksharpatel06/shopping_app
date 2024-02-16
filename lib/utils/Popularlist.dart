@@ -3,6 +3,17 @@ import 'package:flutter/material.dart';
 
 List prodect = [
   {
+    'Image':'asset/img/product image/img21.png',
+    'name':'Galaxy Watch 6 Classic',
+    'prize1':300.0,
+    'prize':140.0,
+    'Icon3':Icons.star,
+    'Icon4':Icons.star_half_outlined,
+    'rating':3.6,
+    'public':1523,
+    'qty':1,
+  },
+  {
     'Image':'asset/img/product image/img1.png',
     'name':'the smart Oxford collar shirt',
     'prize1':500.0,
@@ -11,17 +22,6 @@ List prodect = [
     'Icon4':Icons.star,
     'rating':4.0,
     'public':2372,
-    'qty':1,
-  },
-  {
-    'Image':'asset/img/product image/img2.png',
-    'name':'Galaxy Watch 6 Classic',
-    'prize1':300.0,
-    'prize':140.0,
-    'Icon3':Icons.star,
-    'Icon4':Icons.star_half_outlined,
-    'rating':3.6,
-    'public':1523,
     'qty':1,
   },
   {

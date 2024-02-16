@@ -292,9 +292,9 @@ class home extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 130.0,top: 5.0),
-                child: Icon(Icons.favorite_outline,color: black,size: 30),
+                child: Icon(Icons.favorite_outline,color: Colors.grey.shade700,size: 30),
               ),
-              Image.asset(img!,height:115,fit: BoxFit.cover,),
+              Image.asset(img!,height:130,fit: BoxFit.cover,),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0,right: 5.0),
                 child: Text('$name',overflow: TextOverflow.ellipsis,style: TextStyle(
@@ -366,9 +366,9 @@ class home extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 130.0,top: 5.0),
-                child: Icon(Icons.favorite_outline,color: black,size: 30),
+                child: Icon(Icons.favorite_outline,color: Colors.grey.shade700,size: 30),
               ),
-              Image.asset(img!,height:115,fit: BoxFit.cover,),
+              Image.asset(img!,height:130,fit: BoxFit.cover,),
               Padding(
                 padding: const EdgeInsets.only(left: 8.0,right: 5.0),
                 child: Text('$name\n',overflow: TextOverflow.ellipsis,style: TextStyle(
