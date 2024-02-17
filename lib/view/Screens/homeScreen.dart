@@ -273,12 +273,11 @@ class home extends StatelessWidget {
     return InkWell(
       overlayColor: MaterialStateProperty.all(Colors.transparent),
       onTap: () {
-          // saleindex=index!;
           Navigator.of(context).pushNamed('/product',
           arguments: prodect[index!]);
       },
       child: Padding(
-        padding: const EdgeInsets.only(top: 6.0,right: 8.0,bottom: 6.0),
+        padding: const EdgeInsets.only(top: 6.0,right: 8.0,bottom: 6.0,left: 6.0),
         child: Container(
           height: 240,
           width: 170,
@@ -322,12 +321,12 @@ class home extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 5.0),
-                      child: Icon(Icons.star,color: Colors.yellowAccent.shade700,size: 20,),
+                      child: Icon(Icons.star,color: Colors.amber,size: 20,),
                     ),
-                    Icon(Icons.star,color: Colors.yellowAccent.shade700,size: 20),
-                    Icon(icon3,color: Colors.yellowAccent.shade700,size: 20),
-                    Icon(icon4,color: Colors.yellowAccent.shade700,size: 20),
-                    Icon(Icons.star_border_outlined,color: Colors.yellowAccent.shade700,size: 20),
+                    Icon(Icons.star,color: Colors.amber,size: 20),
+                    Icon(icon3,color: Colors.amber,size: 20),
+                    Icon(icon4,color: Colors.amber,size: 20),
+                    Icon(Icons.star_border_outlined,color: Colors.amber,size: 20),
                     Container(
                       child: Text('     \($rating\)',style: TextStyle(
                         color: grey,
@@ -396,12 +395,12 @@ class home extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 5.0),
-                      child: Icon(Icons.star,color: Colors.yellowAccent.shade700,size: 20,),
+                      child: Icon(Icons.star,color: Colors.amber,size: 20,),
                     ),
-                    Icon(Icons.star,color: Colors.yellowAccent.shade700,size: 20),
-                    Icon(icon3,color: Colors.yellowAccent.shade700,size: 20),
-                    Icon(icon4,color: Colors.yellowAccent.shade700,size: 20),
-                    Icon(Icons.star_border_outlined,color: Colors.yellowAccent.shade700,size: 20),
+                    Icon(Icons.star,color: Colors.amber,size: 20),
+                    Icon(icon3,color: Colors.amber,size: 20),
+                    Icon(icon4,color: Colors.amber,size: 20),
+                    Icon(Icons.star_border_outlined,color: Colors.amber,size: 20),
                     Container(
                       child: Text('     \($rating\)',style: TextStyle(
                         color: grey,
